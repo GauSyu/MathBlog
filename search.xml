@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[Tensor product of injective modules]]></title>
+      <url>http://gausyu.github.io/MathBlog/2017/01/12/tensor-product-of-injective-modules/</url>
+      <content type="html"><![CDATA[<h1 id="Are_tensor_products_of_injective_modules_always_injective_3F"><a href="#Are_tensor_products_of_injective_modules_always_injective_3F" class="headerlink" title="Are tensor products of injective modules always injective?"></a>Are tensor products of injective modules always injective?</h1><p>There is a question^<a href="http://math.stackexchange.com/questions/623907/is-it-true-that-tensor-product-of-injective-modules-is-injective" target="_blank" rel="external">1</a> on Math.Stackexchange asking this. Under it, a post provides two refrences for general criteria:</p>
+<ul>
+<li>Ishikawa, Takeshi. “On injective modules and flat modules.” Journal of the Mathematical Society of Japan 17.3 (1965): 291-296.</li>
+<li>Enochs, Edgar E., and Overtoun MG Jenda. “Tensor and torsion products of injective modules.” Journal of Pure and Applied Algebra 76.2 (1991): 143-149.</li>
+</ul>
+<p>Here I give an example:</p>
+<p>$R=K[x,y]/(x^2,xy,y^2), M=(x,y)$. </p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Profinite groups]]></title>
+      <url>http://gausyu.github.io/MathBlog/2016/02/23/Profinite-groups/</url>
+      <content type="html"><![CDATA[<p>In this post, we simplily discuss the basic notions of profinite groups.<br><a id="more"></a></p>
+<h2 id="Profinite_spaces"><a href="#Profinite_spaces" class="headerlink" title="Profinite spaces"></a>Profinite spaces</h2><p>Usually, the prefix ‘’pro’’ is short for ‘’projective limit’’, which is another name of ‘’limit’’. In this sense, ‘’profinite’’ means ‘’limit of finite’’. Then, a <strong>profinite set</strong> should be a limit of finite sets. But in what category? One can take the limit in $\mathrm{Set}$, or in $\mathrm{Top}$ to get a topology on that set. So, we define<br><strong>Definition:</strong> A <strong>profinite space</strong> is a limit of finite sets (viewed as discrete sets) in $\mathrm{Top}$.</p>
+<p>But how the open sets in a profinite space look like?</p>
+<h3 id="Example_3A_product_of_finite_sets"><a href="#Example_3A_product_of_finite_sets" class="headerlink" title="Example: product of finite sets"></a>Example: product of finite sets</h3><p>Recall that the product topology on the Cartesian product $\prod_iX_i$ is given by the basis $$<br>\prod_i U_i,<br>$$ where $U_i$ are open sets of $X_i$ and only finitely many $U_i$ are not the entire $X_i$.</p>
+<p>From this, one can see the topology of a product of finite sets must be <em>quasi-compact</em>, <em>Hausdorff</em> and <em>totally disconnected</em>.</p>
+<h3 id="Stone_spaces"><a href="#Stone_spaces" class="headerlink" title="Stone spaces"></a>Stone spaces</h3><p>A <strong>Stone space</strong> is a topological space which is quasi-compact, Hausdorff and totally disconnected. Note that all those properties can be inherited by subspaces.</p>
+<p>Recall that any limit is a subspace of a product. Then we get<br><strong>Proposition:</strong> Profinite spaces are Stone spaces.</p>
+<p>Conversely, let $X$ be a Stone space, we expect it to be a limit. So, first of all, we need a system of spaces under $X$, in particualr, a system of quotients of $X$. A possible quotient is the set of connected components. However, as we will see, this set is not always finite. Instead, we consider the set of <em>closed-open partitions</em>. A <em>closed-open partition</em> of $X$ is a collection of nonempty pairwise disjoint closed-open subsets of $X$ such that their union is $X$. The topology on a closed-open partition $I$ is the quotient topology induced by the projection $X\to I$. Since $X$ is quasi-compact, each $I$ must be finite. As quotients of $X$, there exist canonical projections between those closed-open partitions making them form a cofiltered system of quotients of $X$. Now, we have a canonical continuous map $$<br>X\longrightarrow \varprojlim I.<br>$$ This map is injective since the totally disconnectedness implies that any two distinct points can be separated by at least a pair of closed-open sets. This map is also surjective since the compatibility of members of the system implies that for any $(U_I)\in \varprojlim I$, the intersection of any finitely many $U_I$ is nonempty and then the quasi-compactness implies that the intersection of all $U_I$ is nonempty and hence gives the preimage of $(U_I)$. Finally, this map lies in the category of quasi-compact Hausdorff spaces. As this category is <em>balanced</em>, we conclude that the map is a homeomorphism.</p>
+<p>In this way, we see:<br><strong>Proposition:</strong> Stone spaces are profinite spaces.</p>
+<h2 id="Profinite_groups"><a href="#Profinite_groups" class="headerlink" title="Profinite groups"></a>Profinite groups</h2><p>Likewise, a <strong>profinite group</strong> is a limit of finite groups in the category of topological groups. Recall the forgetful functors to $\mathrm{Top}$ and $\mathrm{Grp}$ preserve limits, therefore a profinite group is precisely a topological group whose underlying topological space is a profinite space.</p>
+<h3 id="Open_subgroups"><a href="#Open_subgroups" class="headerlink" title="Open subgroups"></a>Open subgroups</h3><p>Let $G$ be a profinite group. First, consider the following question: what is the intersection of all closed-open neighborhoods of $1$? Of course it should contain the connected component of $1$ which is ${1}$. Then, the compactness implies that the intersection of all closed-open neighborhoods of $1$ is connected. Therefore, this intersection must be ${1}$.</p>
+<p>Next, what’s a neighborhood basis of $1$? An obvious one is the system of all closed-open neighborhoods of $1$. The continuousness of operations further implies that the subsystem of all closed-open subgroups of $G$ is also a neighborhood basis of $1$. </p>
+<p>One may noticed that any open subgroup $U$ of $G$ must be also closed since its complement is the union of the cosets of $U$ which are not $U$. Moreover, since $G$ is quasi-compact, there must be only finitely many cosets. Recall that for any subgroup, the intersection of all its conjugates is a normal subgroup. We see that any open subgroup of $G$ contains an open normal subgroup.</p>
+<p>Note that for any open norm subgroup $U$ of $G$, $G/U$ is a finite quotient group of $G$. Thus we have a canonical homomoprhism $$<br>G\longrightarrow\varprojlim G/U.<br>$$ This homomorphism is injective. As $G$ is Hausdorff, any two elements of $G$ can be separated by two open sets. Since open normal subgroups form a neighborhood basis of $1$, we can shrink the two open sets to two cosets of an open normal subgroup $U$ of $G$. This homomorphism is also surjective by the quasi-compactness. As we are dealing with quasi-compact Hausdorff groups, which form a balanced category, we conclude that the above homomorphism is an isomorphism.</p>
+<h3 id="Morphisms_of_profintie_groups"><a href="#Morphisms_of_profintie_groups" class="headerlink" title="Morphisms of profintie groups"></a>Morphisms of profintie groups</h3><p>Let $G, H$ be two profinite groups. Let’s consider what’s $\mathrm{Hom}(G,H)$?</p>
+<p>First, we write $G$ and $H$ as $\varprojlim G/U$ and $\varprojlim H/V$ respectively. Then $$\mathrm{Hom}(G,H) = \mathrm{Hom}(\varprojlim_U G/U,\varprojlim_V H/V) = \varprojlim_V\mathrm{Hom}(\varprojlim_U G/U,H/V).$$</p>
+<p>Since each $H/V$ is finite, we conclude that $$\mathrm{Hom}(G,H) = \varprojlim_V\varinjlim_U\mathrm{Hom}(G/U,H/V).$$</p>
+<p>The above formula can help us to reduce problems from profinite groups to finite groups. For instance, recall that in the category of finite groups, <em>monomorphisms</em> (resp. <em>epimorphisms</em>) are injective (resp. surjective) homomorphisms. Thus the same statements hold for profinite groups.</p>
+<h3 id="Indices_of_closed_subgroups"><a href="#Indices_of_closed_subgroups" class="headerlink" title="Indices of closed subgroups"></a>Indices of closed subgroups</h3><p>Let $G$ be a profinite group and $H$ a closed subgroup of it. Recall that the <strong>index</strong> $(G:H)$ is defined to be the least common multiple of $(G:U)$ where $U$ goes over the family of open subgroups of $G$ containing $H$. In particular, $\#G:=(G:1)$ is called the <strong>order</strong> of $G$.</p>
+<p>The follwoing results follow from the defiinions and direct computations.</p>
+<ul>
+<li>Let $H,K$ be closed subgroups of $G$, hence also profinite. If $K&lt;H$, then $(G:K) = (G:H)(H:K)$. If moreover, $K$ is normal in $G$, then $(G/K:H/K) = (G:H)$.</li>
+<li>A closed subgroup $H$ in $G$ is open if and only if $(G:H)$ is finite.</li>
+<li>If ${H_i}$ is a decreasing filtered family of closed subgroups in $G$ and $H = \bigcap_iH_i$, then $(G:H)$ is the least common multiple of $(G:H_i)$.</li>
+<li>If $G$ is a limit of profinite groups $G_i$ such that each transitaion map is surjective, then $\#G$ is the least common multiple of $\#G_i$.</li>
+</ul>
+<h3 id="Pro-_24p_24-groups"><a href="#Pro-_24p_24-groups" class="headerlink" title="Pro-$p$-groups"></a>Pro-$p$-groups</h3><p>Let $p$ be a prime number. Like profinite groups, a <strong>pro-$p$ group</strong> is a limit of finite <em>$p$ groups</em>. Note that this is equivalent to say $\#G$ is a power of $p$. Then, for a profinite group $G$, the maximal pro-$p$ subgroups are called the <strong>Sylow $p$ subgroups</strong>. In more common setting, a <strong>Sylow $p$ subgroup</strong> is defined to be a closed subgroup $P$ of $G$ which is a pro-$p$ group and $p\nmid(G:P)$. The usual <strong>Sylow Theorems</strong> hold in this setting saying the equivalence of the above two definitions and that any two Sylow $p$ subgroups are conjugate.</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>For the notion of profinite groups and supernatural numbers, see</p>
+<ul>
+<li>Michael D. Fried, Moshe Jarden, <em>Field Arithmetic</em>, Ergebnisse der Mathematik und ihrer Grenzgebiete 3, Folge 11 (3rd ed.), Springer-Verlag, 2008.</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Galois Correspondences III]]></title>
+      <url>http://gausyu.github.io/MathBlog/2016/02/18/Galois-Correspondences-III/</url>
+      <content type="html"><![CDATA[<p>This time, we consider another kind of Galois correspondence: the one for covering spaces. This is actually somehow trivial.<br><a id="more"></a></p>
+<h2 id="Preliminaries"><a href="#Preliminaries" class="headerlink" title="Preliminaries"></a>Preliminaries</h2><p>Let $X$ be a topological space. We first recall some notions in topology.</p>
+<p><strong>Definition:</strong> A <strong>covering space</strong> $Y$ over $X$ is a bundle $p\colon Y\to X$ which is <em>locally trival</em> and with <em>discrete fibers</em>. In plain words, the condition means for every point $x\in X$, there exists an open neighborhood $U$ such that the pullback $p^{-1}(U)\to U$ is isomorphic to a projection $U\times F\to U$ with $F$ a nonempty discrete set.<br>$$<br>\array{<br>p^{-1}(U) \stackrel{\cong}{\longrightarrow} U\times F \\<br>p\searrow\quad\swarrow\mathrm{pr} \\<br>U<br>}<br>$$</p>
+<p><strong>Definition:</strong> The <strong>fundamental group</strong> $\pi(X,x)$ of $X$ at a point $x\in X$ is the group of homotopy classes of loops through $x$ and lie in $X$.</p>
+<p>Under the assumption that $X$ is <em>connected</em>, <em>locally path-connected</em> and <em>semi-locally simply-connected</em>, the group $\pi(X,x)$ is independent of the choice of $x$. In this case, we denote $\pi(X)$ for short. However, we still need to fix a base point $x$. We will keep this assumption throughout this post.</p>
+<h2 id="Galois_correspondence_for_covering_spaces"><a href="#Galois_correspondence_for_covering_spaces" class="headerlink" title="Galois correspondence for covering spaces"></a>Galois correspondence for covering spaces</h2><h3 id="From_covering_spaces_to__24_5Cpi_28X_29_24-sets"><a href="#From_covering_spaces_to__24_5Cpi_28X_29_24-sets" class="headerlink" title="From covering spaces to $\pi(X)$-sets"></a>From covering spaces to $\pi(X)$-sets</h3><p>Let $p\colon Y\to X$ be a covering space. Then $p^{-1}(x)$ is a $\pi(X)$-set whose action is given as follows: the <em>unique path-lifting lemma</em> says that given a point $y_1\in p^{-1}(x)$, any loop $\phi$ in $X$ start at $x$ can be uniquely lifted to a path in $Y$ from $y_1$ to another point $y_2\in p^{-1}(x)$. The homotopic loops give the same point $y_2$, thus we define the result of the action of this homotopy class $[\phi]$ on $y_1$ to be $y_2$.</p>
+<p>Let $f\colon Y\to Y’$ be a morphism of covering spaces of $X$. Then it induces a continuous $\pi(X)$-map from $p^{-1}(x)$ to $p’^{-1}(x)$. In this way, we get a functor from the category $\mathrm{Cov}/X$ of covering spaces of $X$ to the category of $\pi(X)$-sets:<br>$$<br>\mathcal{F}_x\colon\mathrm{Cov}/X\longrightarrow\pi(X)\text{-}\mathrm{Set}.<br>$$</p>
+<h3 id="The_universal_covering_space"><a href="#The_universal_covering_space" class="headerlink" title="The universal covering space"></a>The universal covering space</h3><p>Let $\widetilde{X}$ be the topological space whose underlying set is the set of all homotopy classes of paths in $X$ starting at the base point $x$ and whose topology is the weakest one making the following map continuous:<br>$$<br>p\colon\widetilde{X}\to X,\quad<br>[\gamma]\mapsto\gamma(1).<br>$$</p>
+<p>For convenience, we fix the bas point $\tilde{x}$ of $\widetilde{X}$  to be the homotopy class of the trivial loops through $x$.</p>
+<p>Then $p\colon\widetilde{X}\to X$ is the <strong>universal covering space</strong> of $X$ in the sense that for any connected covering space $Y\to X$, there exists a morphism of covering spaces of $X$: $$<br>\array{<br>\widetilde{X} \stackrel{\exists!}{\longrightarrow} Y \\<br>\searrow\quad\swarrow \\<br>X<br>}<br>$$ and this morphism is unique if we require it to preserve the base points. When we choice $y\in p^{-1}(x)$ to be the base point of $Y$, the morphism is given as follows: the <em>unique path-lifting lemma</em> allows us to lift every path $\gamma$ start at $x$ in $X$ to a path start at $y$ in $Y$, we define the image of $[\gamma]$ to be the end of this path.</p>
+<p>Note that the universal covering space naturally has a free $\pi(X)$-action given by composition of homotopy classes of paths. For any subgroup $H$ of $\pi(X)$, the orbit space $\widetilde{X}/H$ also gives a connected covering space of $X$ whose fibers are isomorphic to $\pi(X)/H$.</p>
+<h3 id="From__24_5Cpi_28X_29_24-sets_to_covering_spaces"><a href="#From__24_5Cpi_28X_29_24-sets_to_covering_spaces" class="headerlink" title="From $\pi(X)$-sets to covering spaces"></a>From $\pi(X)$-sets to covering spaces</h3><p>Let $S$ be a $\pi(X)$-set. Then, we may write<br>$$<br>S = \bigsqcup \pi(X)s.<br>$$</p>
+<p>We define $$<br>F(S) = \bigsqcup \widetilde{X}/\pi(X)_s,<br>$$ and the bundle map $p\colon F(S)\to X$ is the one induced from the previous property of universal covering space. One can see the canonical $\pi(X)$-map $$<br>S\longrightarrow p^{-1}(x)<br>$$ is bijective.</p>
+<p>Note that this induces a functor<br>$$<br>F\colon \pi(X)\text{-}\mathrm{Set}\longrightarrow\mathrm{Cov}/X.<br>$$</p>
+<h3 id="The_equivalence"><a href="#The_equivalence" class="headerlink" title="The equivalence"></a>The equivalence</h3><p>Given a covering space $p\colon Y\to X$, we have a $\pi(X)$-set $p^{-1}(x)$ where $x$ is a point of $X$. Assume $p^{-1}(x) = \bigsqcup \pi(X)y$, we have $$F(p^{-1}(x)) = \bigsqcup \widetilde{X}/\pi(X)_y.$$ </p>
+<p>As elements of $\pi(X)_y$ fix $y\in p^{-1}(x)$, the unique morphism of covering spaces of $X$ from $\widetilde{X}$ to $Y$ mapping $\tilde{x}$ to $y$ factors through $\widetilde{X}/\pi(X)_y$. In this way, we have a canonical morphism of covering spaces of $X$: $$F(p^{-1}(x))\longrightarrow Y.$$</p>
+<p>It is not difficult to see that $Y$ is connected if and only if $\pi(X)$ acts transitive on $p^{-1}(x)$. Therefore, the orbit decomposition of $p^{-1}(x)$ corresponds to the connected components decomposition of $Y$. In this way, we see the moprhism $$F(p^{-1}(x))\longrightarrow Y$$ is an isomoprhism.</p>
+<p>Now, we get the Galois correspondence for covering spaces.</p>
+<p><strong>Theorem:</strong> Let $X$ be a <em>connected</em>, <em>locally path-connected</em> and <em>semi-locally simply-connected</em> space. Then we have an equivalence of categories $$<br>\mathrm{Cov}/X\cong\pi(X)\text{-}\mathrm{Set}.<br>$$</p>
+<h2 id="Rethinking"><a href="#Rethinking" class="headerlink" title="Rethinking"></a>Rethinking</h2><p>It is easy to verify that the universal covering space $\widetilde{X}$ represents the functor $\mathcal{F}_x$. Moreover, we have $$\mathrm{Aut}_X(\widetilde{X}) \cong \pi(X),$$ and $$\mathrm{Aut}_X(\widetilde{X}) &lt; \mathrm{Aut}(\mathcal{F}_x).$$ However, $\mathrm{Aut}_X(\widetilde{X})$ is in general not isomorphic to $\mathrm{Aut}(\mathcal{F}_x)$. </p>
+<p>What’s more, by only assume $X$ is connected, the functor $\mathcal{F}_x$ still works and is independent of the choice of $x$, while the universal covering $\widetilde{X}$ may not exists.</p>
+<p>Let’s stop this post here and leave further discussions next time.</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>One can take a loo at </p>
+<ul>
+<li>Allen Hatcher, <em>Algebraic Topology</em>, Cambridge University Press, 2002.</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Galois Correspondences II]]></title>
+      <url>http://gausyu.github.io/MathBlog/2016/02/16/Galois-Correspondences-II/</url>
+      <content type="html"><![CDATA[<p>This time, we consider a more general case: we give the Galois correspondence for schemes over a field.</p>
+<a id="more"></a>
+<h2 id="Preliminaries"><a href="#Preliminaries" class="headerlink" title="Preliminaries"></a>Preliminaries</h2><p>First, we recall some notions and facts. </p>
+<h3 id="Adjunctions_and_adjoint_equivalences"><a href="#Adjunctions_and_adjoint_equivalences" class="headerlink" title="Adjunctions and adjoint equivalences"></a>Adjunctions and adjoint equivalences</h3><p><strong>Definition:</strong> Let $F\colon\mathcal{C}\to\mathcal{D}, G\colon\mathcal{D}\to\mathcal{C}$ be two functors. We call they form an <strong>adjuction</strong> if there exist two natrual transformations $\eta\colon\mathrm{id} \to GF$ (called <strong>unit</strong>) and $\epsilon\colon FG \to \mathrm{id}$ (called <strong>counit</strong>) such that the following two diagrams (called the <strong>triangle identities</strong>) hold. $$<br>\array{<br>FGF &amp;<br>GFG\\<br>F\eta\nearrow\qquad\nwarrow\epsilon G &amp;<br>\eta G\nearrow\qquad\nwarrow F\epsilon \\<br>F\quad\stackrel{\mathrm{id}}{\longrightarrow}\quad F &amp;<br>G\quad\stackrel{\mathrm{id}}{\longrightarrow}\quad G<br>}<br>$$ If furthermore both $\eta$ and $\epsilon$ are isomorphisms, then $F,G$ are equivalences of categories and we say they form a pair of <strong>adjoint equivalences</strong>.</p>
+<p><strong>Proposition:</strong> Let $F\colon\mathcal{C}\to\mathcal{D}, G\colon\mathcal{D}\to\mathcal{C}$ be an adjunction with unit $\eta$ and counit $\epsilon$. Let $\mathcal{C}^{\eta}$ be the full subcategory of $\mathcal{C}$ consisting of those objects $X$ such that $\eta_X$ is an isomorphism. Define $\mathcal{D}^{\epsilon}$ likewise. Then $F$ and $G$ give rise to a pair of adjoint equivalences:<br>$$<br>\mathcal{C}^{\eta} \cong \mathcal{D}^{\epsilon}.<br>$$</p>
+<h3 id="24G_24-sets_and__24G_24-spaces"><a href="#24G_24-sets_and__24G_24-spaces" class="headerlink" title="$G$-sets and $G$-spaces"></a>$G$-sets and $G$-spaces</h3><p><strong>Definition:</strong> Let $G$ be a group. A <strong>$G$-set</strong> is a set $S$ together with a group action $G\times S\to S$. A <strong>$G$-map</strong> is a map of sets between $G$-sets compatible with the group actions. A <strong>$G$-subset</strong> of a $G$-set $S$ is a subset $T$ of $S$ such that the inclusion $T\hookrightarrow S$ is a $G$-map. Let $s\in S$, then</p>
+<ul>
+<li>the $G$-subset $Gs:=\left\{gs \middle| g\in G\right\}$ is called the <strong>orbit</strong> of $s$;</li>
+<li>the subgroup $G_s:=\left\{ g\in G \middle| gs=s \right\}$ is called the <strong>stabilizer</strong> of $s$;</li>
+<li>$s$ is said to be <strong>$G$-invariant</strong> if $gs=s$ for all $g\in G$.</li>
+</ul>
+<p>Let $g\in G$, then</p>
+<ul>
+<li>the $G$-subset $S^g:=\left\{s\in S\middle|gs=s\right\}$ is called the set of <strong>fixed point</strong> of $g$.</li>
+</ul>
+<p>Finally</p>
+<ul>
+<li>the set of $G$-invariants is denoted by $S^G$, which equals $\cap_{g\in G} S^g$,</li>
+<li>the set of orbits is denoted by $S/G$ and called the <strong>quotient</strong> of the action.</li>
+</ul>
+<p><strong>Fundamental theorem of $G$-sets:</strong>  Let $G$ be a group and $S$ a $G$-set. Then $S$ is a disjoint union of some orbits $Gs$, which, as $G$-set, is isomorphic to the quotient $G/G_s$.</p>
+<p><strong>Remark:</strong> The above stories can be transplanted to some geometric categories $\mathcal{C}$. In this case, we should consider group objects $G$ instead of groups and $G$-spaces instead of $G$-sets. In this case, we call the space of orbits $S/G$ the <strong>orbit space</strong>. Examples include:</p>
+<ul>
+<li>continuous actions of topological groups on topological spaces,</li>
+<li>smooth actions of Lie groups on smooth manifolds, </li>
+<li>regular actions of algebraic groups on algebraic varieties, and </li>
+<li>actions of group schemes on schemes.</li>
+</ul>
+<p><strong>Remark:</strong> Let $G$ be a topological group. Then we call a $G$-space $S$ with discrete topology a <strong>$G$-set</strong>. Note that in thise case, the stabiliaer of any point is open.</p>
+<h2 id="Galois_Theory_For__24K_24-Schemes"><a href="#Galois_Theory_For__24K_24-Schemes" class="headerlink" title="Galois Theory For $K$-Schemes"></a>Galois Theory For $K$-Schemes</h2><p>Let $K$ be a field and $G$ be its absolute Galois group.</p>
+<p><strong>Definition:</strong> A <strong>$K$-scheme</strong> is a locally ringed space which is locally the spectrum of a $K$-algebra. Equivalently, a $K$-scheme $X$ is a morphism of schemes $X\to \mathrm{Spec}(K)$. A morphism of $K$-schemes is a morphism of schemes over $\mathrm{Spec}(K)$.</p>
+<p>Note that, there exists a continuous $G$-action on each set $\mathrm{Hom}_{\mathrm{Spec}(K)}(\mathrm{Spec}(K_{\mathrm{sep}}),X)$ for each $K$-scheme $X$: $$<br>\array{<br>G\times\mathrm{Hom}_{\mathrm{Spec}(K)}\left(\mathrm{Spec}(K_{\mathrm{sep}}),X\right) &amp;<br>\longrightarrow &amp;<br>\mathrm{Hom}_{\mathrm{Spec}(K)}\left(\mathrm{Spec}(K_{\mathrm{sep}}),X\right) \\<br>(g,f) &amp;<br>\longmapsto &amp;<br>f\circ\widetilde{g},<br>}<br>$$ where $\widetilde{g}$ is the automoprhism of $\mathrm{Spec}(K_{\mathrm{sep}})$ induced by $g\colon K_{\mathrm{sep}}\to K_{\mathrm{sep}}$.</p>
+<p>Those actions are compatible with the morphisms of $K$-schemes. Therefore, we get a functor<br>$$<br>K\text{-}\mathrm{Sch} \longrightarrow G\text{-}\mathrm{Set}.<br>$$</p>
+<h3 id="From__24G_24-sets_to__24K_24-schemes"><a href="#From__24G_24-sets_to__24K_24-schemes" class="headerlink" title="From $G$-sets to $K$-schemes"></a>From $G$-sets to $K$-schemes</h3><p>Let $H$ be a subgroup of $G$, then $K_{\mathrm{sep}}^H$ is an $K$-algebra. Since any homomorphism of $K$-algebras $K_{\mathrm{sep}}^H\to K_{\mathrm{sep}}$ can be extended to an automorphism of $K_{\mathrm{sep}}$ over $K$, we have $$<br>\mathrm{Hom}_{\mathrm{Spec}(K)}\left(\mathrm{Spec}(K_{\mathrm{sep}}),\mathrm{Spec}(K_{\mathrm{sep}}^H)\right) = \mathrm{Hom}_K\left(K_{\mathrm{sep}}^H,K_{\mathrm{sep}}\right) \cong G/H<br>$$ as $G$-sets.</p>
+<p>Let $S$ be a $G$-set and $$<br>S = \bigsqcup Gs<br>$$ be all the distinct orbits of $S$. Then $$<br>X = \bigsqcup \mathrm{Spec}(K_{\mathrm{sep}}^{G_s})<br>$$ is a $K$-scheme. </p>
+<p>Since $\mathrm{Spec}(K_{\mathrm{sep}})$ is a single point hence connected, the $G$-map $$<br>\eta_S\colon S = \bigsqcup Gs \cong \bigsqcup\mathrm{Hom}_{\mathrm{Spec}(K)}\left(\mathrm{Spec}(K_{\mathrm{sep}}),\mathrm{Spec}(K_{\mathrm{sep}}^{G_s})\right)\longrightarrow<br>\mathrm{Hom}_{\mathrm{Spec}(K)}\left(\mathrm{Spec}(K_{\mathrm{sep}}),\bigsqcup\mathrm{Spec}(K_{\mathrm{sep}}^{G_s})\right)<br>$$ is bijective.</p>
+<p>Let $f\colon S\to T$ be a $G$-map and let $X, Y$ be the $F$-algebras associated to $S, T$ respectively. Then for any point $s\in S$, the stabilizer of $s$ is a subgroup of $f(s)$. Thus $K_{\mathrm{sep}}^{G_{f(s)}}$ is a subalgebra of $K_{\mathrm{sep}}^{G_s}$. This induces a morphism of $K$-schemes $X\to Y$.</p>
+<p>In this way, we get a functor<br>$$<br>F\colon G\text{-}\mathrm{sets} \longrightarrow K\text{-}\mathrm{Sch}.<br>$$</p>
+<h3 id="From__24K_24-schemes_to__24G_24-sets"><a href="#From__24K_24-schemes_to__24G_24-sets" class="headerlink" title="From $K$-schemes to $G$-sets"></a>From $K$-schemes to $G$-sets</h3><p>Let $X$ be a $K$-scheme and $$<br>\mathrm{Hom}_{\mathrm{Spec}(K)}\left(\mathrm{Spec}(K_{\mathrm{sep}}),X\right) = \bigsqcup Gf<br>$$ the orbit decomposition. Let $$<br>Y = \bigsqcup \mathrm{Spec}(K_{\mathrm{sep}}^{G_f}).<br>$$</p>
+<p>Let $f\colon\mathrm{Spec}(K_{\mathrm{sep}})\to X$ be a morphism of $K$-schemes. Then, for any open set $U$ of $X$ containing the image of $f$, the $K$-homomorphism $\mathcal{O}_X(U)\to K_{\mathrm{sep}}$ factors through $K_{\mathrm{sep}}^{G_f}$. Thus $f$ factors through $\mathrm{Spec}(K_{\mathrm{sep}}^{G_f})$.</p>
+<p>Therefore we get a canonical morphism of $K$-schemes<br>$$<br>\epsilon_X\colon Y\longrightarrow X.<br>$$</p>
+<h3 id="The_adjunction"><a href="#The_adjunction" class="headerlink" title="The adjunction"></a>The adjunction</h3><p>From the above discussion, we have seen:</p>
+<ul>
+<li>given a $G$-set $S$, there is a canonical bijective $G$-map $$\eta_S\colon S\longrightarrow\mathrm{Hom}_{\mathrm{Spec}(K)}\left(\mathrm{Spec}(K_{\mathrm{sep}}),F(S)\right);$$</li>
+<li>given a $K$-scheme $X$, there is a canonical morphism of $K$-schemes $$\epsilon_X\colon F(\mathrm{Hom}_{\mathrm{Spec}(K)}\left(\mathrm{Spec}(K_{\mathrm{sep}}),X\right))\longrightarrow X.$$</li>
+</ul>
+<p>Moreover, one can verify that the above data satisfies the triangle identities. Thus we get an adjunction<br>$$<br>F\dashv \mathrm{Hom}_{\mathrm{Spec}(K)}\left(\mathrm{Spec}(K_{\mathrm{sep}}),-\right).<br>$$</p>
+<p>As $\eta_S$ is always bijective, we have $(G\text{-}\mathrm{Set})^{\eta} = G\text{-}\mathrm{Set}$. How about $(K\text{-}\mathrm{Sch})^{\epsilon}$?</p>
+<h3 id="Etale_schemes"><a href="#Etale_schemes" class="headerlink" title="Etale schemes"></a>Etale schemes</h3><p>The essential iamge of the functor $F$ can be characterised as follows.<br><strong>Definition:</strong> A $K$-scheme is said to be <strong>étale</strong> if it is isomorphic to a disjoint union of sepctra of finite separable extensions of $K$.<br>This is of course not the original definition. One can image this as a lemma.</p>
+<p>By the first Galois correspondence, any finite separable extension of $K$ is of the form $K^H$ where $H$ is an open subgroup of $G$.</p>
+<p>Let $X$ be an étale $K$-scheme and<br>$$<br>X \cong \bigsqcup \mathrm{Spec}(K_{\mathrm{sep}}^{H_i}).<br>$$</p>
+<p>Then we have<br>$$<br>\mathrm{Hom}_{\mathrm{Spec}(K)}\left(\mathrm{Spec}(K_{\mathrm{sep}}),X\right)=\bigsqcup\mathrm{Hom}_{\mathrm{Spec}(K)}\left(\mathrm{Spec}(K_{\mathrm{sep}}),\mathrm{Spec}(K_{\mathrm{sep}}^{H_i})\right).<br>$$</p>
+<p>Note that each $\mathrm{Hom}_{\mathrm{Spec}(K)}\left(\mathrm{Spec}(K_{\mathrm{sep}}),\mathrm{Spec}(K_{\mathrm{sep}}^{H_i})\right)$ must be connected. Therefore $$F(\mathrm{Hom}_{\mathrm{Spec}(K)}\left(\mathrm{Spec}(K_{\mathrm{sep}}),X\right)) = \bigsqcup \mathrm{Spec}(K_{\mathrm{sep}}^{H_i})$$ and hence the canonical morphism $\epsilon_X$ is an isomophism.</p>
+<p>In this way, we see that $(K\text{-}\mathrm{Sch})^{\epsilon}$ consists precisely the étale $K$-schemes.</p>
+<h3 id="Galois_correspondence_for__24K_24-schemes"><a href="#Galois_correspondence_for__24K_24-schemes" class="headerlink" title="Galois correspondence for $K$-schemes"></a>Galois correspondence for $K$-schemes</h3><p>Conclude above, we have<br><strong>Theorem:</strong> Let $K$ be a field and $G$ be its absolute Galois group. Then there is a pair of adjoint equivalences of categories $$<br>F\dashv \mathrm{Hom}_{\mathrm{Spec}(K)}\left(\mathrm{Spec}(K_{\mathrm{sep}}),-\right).<br>$$ between the category of $G$-sets and the category of étale $K$-schemes.</p>
+<p>Let $L/K$ be a Galois extension, then the above pair of adjoint equivalences induces a pair of adjoint of equivalences between the category of $\mathrm{Gal}(L/K)$-sets and the category of $K$-schemes which are isomorphic to disjoint unions of sepctra of finite subseparable extensions of $L/K$.</p>
+<h3 id="Galois_correspondence_for__24K_24-algebras"><a href="#Galois_correspondence_for__24K_24-algebras" class="headerlink" title="Galois correspondence for $K$-algebras"></a>Galois correspondence for $K$-algebras</h3><p>Note that finite disjoint union of affine schemes is the same as coproduct of them in the category of affine schemes, hence we have<br>$$<br>\bigsqcup_{i=1}^{n}\mathrm{Spec}(L_i) = \mathrm{Spec}(\prod_{i=1}^{n}L_i).<br>$$</p>
+<p>Recall that a $K$-algebra is said to be <strong>étale</strong> if it is a finite product of finite separable extensions of $K$ and <strong>splited</strong> by $L$ is all those separable extensions are subextensions of the Galois extension $L/K$. Then one may expect a Galois correspondence for such kind of $K$-algebras. However, a finite disjoint union of $G$-sets may not be finite unless all the components are finite. So we have<br><strong>Theorem:</strong> Let $L/K$ be a finite Galois extension. Then the functor $$<br>\mathrm{Hom}_{K}\left(-,L\right)<br>$$ is an equivalence between the category of finite $\mathrm{Gal}(L/K)$-sets and the category of finite $K$-algebras splited by $L$.</p>
+<p>Note that </p>
+<ul>
+<li>any Galois extension is a filtered colimit of finite Galois extensions;</li>
+<li>any $K$-algebra is a filtered colimit of finite subalgebras;</li>
+<li>a $G$-space is said to be <strong>profinite</strong> if it is a filtered colimit of finite $G$-sets.</li>
+</ul>
+<p>We thus get<br><strong>Theorem:</strong> Let $L/K$ be a Galois extension. Then the functor $$<br>\mathrm{Hom}_{K}\left(-,L\right)<br>$$ is an equivalence between the category of profinite $\mathrm{Gal}(L/K)$-spaces and the category of $K$-algebras splited by $L$.</p>
+<h3 id="Etale_coverings"><a href="#Etale_coverings" class="headerlink" title="Etale coverings"></a>Etale coverings</h3><p>Recall that<br><strong>Definition:</strong> Let $X$ be a scheme. A family of morphisms $\{f_i\colon Y_i\to X\}$ is called a <strong>étale covering</strong> if all $f_i$ are étale and the images of $Y_i$ cover $X$. Equipped such coverings, $\mathrm{Sch}$ becomes a sites, call the <strong>(big) étale site</strong>, and $K\text{-}\mathrm{Sch}$ becomes a sites $\mathrm{Spec}(K)_{et}$, call the <strong>(small) étale site</strong> of $\mathrm{Spec}(K)$.</p>
+<p>One can verify that under the Galois correspondence for $K$-schemes, the étale coverings in the étale site $\mathrm{Spec}(K)_{et}$ correspond to surjective families of $G$-maps in $G\text{-}\mathrm{Set}$.</p>
+<p>Let’s stop this post here.</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>For the notion of schemes, one can refer any textbooks such as</p>
+<ul>
+<li>Robin Hartshorne, <em>Algebraic Geometry</em>, Graduate Texts in Mathematics 52, New York: Springer-Verlag, 1977.</li>
+<li>Ravi Vakil, <a href="https://math216.wordpress.com" target="_blank" rel="external"><em>Math 216: Foundations of algebraic geometry</em></a>.</li>
+<li>Johan de Jong, et al., <a href="http://stacks.math.columbia.edu" target="_blank" rel="external"><em>Stack project</em></a>.</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Connectedness of Schemes]]></title>
+      <url>http://gausyu.github.io/MathBlog/2016/02/13/Connectedness-of-Schemes/</url>
+      <content type="html"><![CDATA[<p>In this short post, we point out that the notion of connectedness of schemes is previously a special case of connected objects.<br><a id="more"></a></p>
+<h2 id="Infinitary_extensive_categories"><a href="#Infinitary_extensive_categories" class="headerlink" title="Infinitary extensive categories"></a>Infinitary extensive categories</h2><p><strong>Definition:</strong> A category $\mathcal{C}$ is said to be <strong>infinitary extensive</strong> if it has all (small) coproducts such that pullbacks of coproduct injections along arbitrary morphisms exist and finite coproducts are disjoint and stable under pullback.</p>
+<p>One can then image coproducts in such kind of categories as generalized disjoint unions. Typical examples are topoi and some geometric categories such as $\mathrm{Top}$ and $\mathrm{Diff}$.</p>
+<p>The category $\mathrm{Sch}$ of schemes is also infinitary extensive, see <a href="http://ncatlab.org/toddtrimble/published/Dippy+disproof+of+infinitary+extensivity+of+affine+schemes" target="_blank" rel="external">here</a> for discussion on this fact.</p>
+<h2 id="Connected_schemes"><a href="#Connected_schemes" class="headerlink" title="Connected schemes"></a>Connected schemes</h2><p>We now discuss the notion of connectedness for schemes. Note that we always assume that connected spaces are nonempty. Recall that the coproducts in $\mathrm{Top}$ and $\mathrm{Sch}$ are just disjoint unions.</p>
+<p><strong>Definition:</strong> Let $\mathcal{C}$ be an infinitary extensive category. Then an object $X$ is called a <strong>connected object</strong> if the representable functor $$<br>\mathrm{Hom}(X,−)\colon\mathcal{C}\longrightarrow \mathrm{Set}<br>$$ preserves binary coproducts. Note that if this is the case, then the above representable functor preserves all coproducts.</p>
+<p><strong>Definition:</strong> A scheme $X$ is said to be <strong>connected</strong> if its underlying topological space is connected.</p>
+<p>We want to show<br><strong>Theorem:</strong> A scheme is connected if and only if it is a connected object.</p>
+<p>To prove this, recall the similar result for topological spaces.<br><strong>Lemma:</strong> A topological space is connected if and only if it is a connected object.<br><strong>Proof:</strong> Let $X$ be a connected space and $\{Y_i\}$ be a family of topological spaces. Then we always have an injective map $$\bigsqcup\mathrm{Hom}(X,Y_i)\longrightarrow\mathrm{Hom}(X,\bigsqcup Y_i).$$ As any continuous map must preserve connectedness, this map is also surjective.<br>Coversely, let $X=Y_1\sqcup Y_2$. Then the map $$\mathrm{Hom}(X,Y_1)\sqcup\mathrm{Hom}(X,Y_2)\longrightarrow\mathrm{Hom}(X,X)$$ is not surjective since the identity $\mathrm{id}_{X}$ has no preimage. This shows $X$ can not be a connected object.</p>
+<p>Note that, the underlying map of any morphism of schemes is continuous, therefore the above proof works for the theorem with a bit modifocations.</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://ncatlab.org/nlab/show/connected+object" target="_blank" rel="external">https://ncatlab.org/nlab/show/connected+object</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Galois Correspondences I]]></title>
+      <url>http://gausyu.github.io/MathBlog/2016/01/23/Galois-Correspondences-I/</url>
+      <content type="html"><![CDATA[<p>In this post, we discuss the fundamental theorem of Galois theory along the consideration of Galois connections.<br><a id="more"></a></p>
+<h2 id="Galois_Connections"><a href="#Galois_Connections" class="headerlink" title="Galois Connections"></a>Galois Connections</h2><p><strong>Definition:</strong> An <strong>(antitone) Galois connection</strong> is a <em>dual adjunction</em> between posets. In other words, a Galois connection consists of the following data:</p>
+<ul>
+<li>Two posets $A, B$,</li>
+<li>Two order-reversing maps $f:A\to B$ and $g:B\to A$ ,<br>such that</li>
+<li>$a\le g(f(a))$ and $b\le f(g(b))$ for all $a\in A$, $b\in B$.</li>
+</ul>
+<p>One can see that $f$ and $g$ automatically satisfy the <em>triangle identities</em>: $$f\circ g\circ f = f, \qquad g\circ f\circ g = g,$$ and thus form a dual adjunction between posets.</p>
+<p><strong>Definition:</strong> An <strong>(antitone) Galois correspondence</strong> is a <em>dual adjoint equivalence</em> between posets, that is a Galois connection such that  $f\circ g = 1$ and $g\circ f = 1$.</p>
+<p>One can verify the following basic fact.<br><strong>Proposision:</strong> Any Galois connection $(A,B,f,g)$ induces a Galois correspondence $(g(B),f(A),f,g)$. </p>
+<p>Recall that a dual adjoint functor maps colimits to limits and gives canonical morphisms from colimits to the image of limits. Thus we have<br><strong>Proposision:</strong> Let $(A,B,f,g)$ be a Galois connection. Then for any $a_i\in A, b_j\in B$, we have<br>$$<br>\array{<br>f(\sup \{a_i\}) = \inf\{f(a_i)\},<br>&amp;\quad&amp;<br>f(\inf\{a_i\}) \ge \sup\{f(a_i)\},\\<br>g(\sup\{b_j\}) = \inf\{g(b_j)\},<br>&amp;\quad&amp;<br>g(\inf\{b_j\}) \ge \sup\{g(b_j)\}.<br>}<br>$$</p>
+<p><strong>Remark:</strong> One can also consider the notions of <em>monotone Galois connections</em> and <em>monotone Galois correspondences</em>. </p>
+<h2 id="Galois_Groups_and_Galois_Extensions"><a href="#Galois_Groups_and_Galois_Extensions" class="headerlink" title="Galois Groups and Galois Extensions"></a>Galois Groups and Galois Extensions</h2><p>Now we apply the above to algebraic field extensions. So throughout this section, every field extension is assumed to be algebraic.</p>
+<h3 id="First_Galois_Correspondence"><a href="#First_Galois_Correspondence" class="headerlink" title="First Galois Correspondence"></a>First Galois Correspondence</h3><p>First, we have the folloing Galois connection: $$<br>\array{<br>\{\text{subgroups of }\mathrm{Aut}(K)\} &amp; \longleftrightarrow &amp;<br>\{\text{subfields of }K\}.\\<br>G &amp;<br>\longrightarrow &amp;<br>K^G\\<br>\mathrm{Gal}(K/F) &amp;<br>\longleftarrow &amp;<br>F.<br>}<br>$$ Here we use $\mathrm{Gal}(K/F)$ to denote the group of automorphisms of $K$ fixing $F$.</p>
+<p>We define<br><strong>Definition:</strong> A subgroup $G$ of $\mathrm{Aut}(K)$ is called a <strong>Galois group</strong> if $G=\mathrm{Gal}(K/F)$, where $F$ is a subfield of $K$. A field extension $K/F$ is called a <strong>Galois extension</strong> if $F=K^G$, where $G$ is a subgroup of $\mathrm{Aut}(K)$.</p>
+<p>Then we obtain the Galois corresponding between Galois groups and Galois extensions. However, this correpondence is not the one the fundamental theorem of Galois theory states. To get it, we need to look closer. For the field extension side, we need to show that if $K/F$ is a Galois extension, then so are all $K/E$ where $E$ is an intermediate field of $K/F$. This follows immediately once one proves the following lemma.</p>
+<p><strong>Lemma:</strong> A field extension is a Galois extension if and only if it is the <em>splitting field</em> of a family of <em>separable polynomials</em>.<br>Note that, from this, one can see any Galois extension must be a <em>separable extension</em>.</p>
+<p>For the subgroup side, one only need to notice that the Galois subgroups must be closed. Then, we get the Galois correspondence for a Galois extension $K/F$:<br>$$<br>\array{<br>\{\text{closed subgroups of }\mathrm{Gal}(K/F)\} &amp; \longleftrightarrow &amp;<br>\{\text{intermediate fields of }K/F\}.\\<br>H &amp;<br>\longrightarrow &amp;<br>K^H\\<br>\mathrm{Gal}(K/E) &amp;<br>\longleftarrow &amp;<br>E.<br>}<br>$$</p>
+<p>Note that under this corresponding, open subgroups of $\mathrm{Gal}(K/F)$ correspond finite subextensions of $K/F$.</p>
+<h3 id="Second_Galois_Correspondence"><a href="#Second_Galois_Correspondence" class="headerlink" title="Second Galois Correspondence"></a>Second Galois Correspondence</h3><p>Now, we restrict the map $H\mapsto K^H$ to the subposet of normal subgroups of $\mathrm{Gal}(K/F)$ and identify it with the opposite of the poset of quotient of $\mathrm{Gal}(K/F)$. Then, we have the following order-reversing map<br>$$<br>\array{<br>\{\text{quotients of }\mathrm{Gal}(K/F)\} &amp; \longleftrightarrow &amp;<br>\{\text{intermediate fields of }K/F\}.\\<br>\mathrm{Gal}(K/F)/H &amp;<br>\longmapsto &amp;<br>K^H.<br>}<br>$$</p>
+<p>One can see<br>$$<br>\mathrm{Gal}(K^H/F) = \mathrm{Gal}(K/F)/H.<br>$$</p>
+<p>In other word, $\mathrm{Gal}(K^H/F)$ is a quotient of $\mathrm{Gal}(K/F)$ with kernel $H$.</p>
+<p>For an arbitrary field extension $E/F$, there is no need to be an epimorphism $$<br>\mathrm{Gal}(F)\longrightarrow\mathrm{Gal}(E/F).<br>$$ Here $\mathrm{Gal}(F)$ denotes the <strong>absolutely Galois group</strong> $\mathrm{Gal}(F_{\mathrm{alg}}/F)$.<br>Note that, $\mathrm{Gal}(F_{\mathrm{alg}}/F) = \mathrm{Gal}(F_{\mathrm{sep}}/F)$, where $F_{\mathrm{sep}}$ is the separable closure of $F$ and $F_{\mathrm{sep}}/F$ is always Galois.</p>
+<p>We define<br><strong>Definition:</strong> A field extension $E/F$ is call a <strong>normal extension</strong> if any embedding $E\to F_{\mathrm{alg}}$ induces an automorphism of $E$ over $F$.<br>One can see that <em>Galois = normal + separable</em> if one has known the following lemma.<br><strong>Lemma:</strong> A field extension is a normal extension if and only if it is the splitting field of a family of polynomials.</p>
+<p>Now, one can now see that if $E/F$ is a normal extension, then there is a group homomorphism<br>$$<br>\array{<br>\mathrm{Gal}(F) &amp;<br>\longrightarrow &amp;<br>\mathrm{Gal}(E/F). \\<br>\sigma &amp;<br>\longmapsto &amp;<br>\sigma|_E,<br>}<br>$$ </p>
+<p>As any automorphism of a normal extension $E/F$ can be extended into an automorphism of $F_{\mathrm{alg}}/F$, the above homomorphism is surjective. The kernel of it is obviously the absolutely Galois group $\mathrm{Gal}(E)$.</p>
+<p>In this way, we get a Galois connection:<br>$$<br>\array{<br>\{\text{quotients of }\mathrm{Gal}(F)\} &amp; \longleftrightarrow &amp;<br>\{\text{normal extensions of }F\}.\\<br>\mathrm{Gal}(F)/H &amp;<br>\longrightarrow &amp;<br>F_{\mathrm{alg}}^H\\<br>\mathrm{Gal}(E) &amp;<br>\longleftarrow &amp;<br>E.<br>}<br>$$</p>
+<p>Let $K/F$ be another normal extension such that $E\subset K$. Then, by the Galois connection, we have $$\mathrm{Gal}(F_{\mathrm{alg}}/K)&lt;\mathrm{Gal}(F_{\mathrm{alg}}/E).$$ Therefore there is a homomorphism $$<br>\mathrm{Gal}(K/F)\longrightarrow\mathrm{Gal}(E/F).<br>$$ fitting into the following commutative diagram $$<br>\array{<br>\mathrm{Gal}(F_{\mathrm{alg}}/F) \\<br>\swarrow\qquad\qquad\searrow \\<br>\mathrm{Gal}(K/F)\longrightarrow\mathrm{Gal}(E/F)<br>}<br>$$ and hence an epimorphism. In particular this holds for Galois extensions $K/F$.</p>
+<p>In this way, we get a Galois correspondence:<br>$$<br>\array{<br>\{\text{quotients of }\mathrm{Gal}(K/F)\} &amp; \longleftrightarrow &amp;<br>\{\text{normal subextensions of }K/F\}.\\<br>\mathrm{Gal}(K/F)/H &amp;<br>\longrightarrow &amp;<br>K^H \\<br>\mathrm{Gal}(K/E) &amp;<br>\longleftarrow &amp;<br>E.<br>}<br>$$</p>
+<h3 id="The_Degree_Encoding"><a href="#The_Degree_Encoding" class="headerlink" title="The Degree Encoding"></a>The Degree Encoding</h3><p>Let $K/F$ be a field extension. The poset of closed subgroups of $G=\mathrm{Gal}(K/F)$ admits an order-preserving map $H\mapsto|H|$ and an order-reversing map $H\mapsto[G:H]$ to the poset of <em>supernatural numbers</em>. Moreover, we have<br>$$<br>|G| = |H|\cdot[G:H].<br>$$</p>
+<p>Likewise, the poset of intermediate fields $E$ of $K/F$ admits an order-reversing map $E\mapsto[K:E]$ and an order-preserving map $E\mapsto[E:F]$ to the poset of supernatural numbers and we have<br>$$<br>[K:F] = [K:E]\cdot[E:F].<br>$$</p>
+<p>The Galois correspondences suggest us to compare them. This is what Artin’s theorem says.</p>
+<p><strong>Artin’s Theorem:</strong> Let $K$ be a field and $G$ a closed subgroup of $\mathrm{Aut}(K)$. Then<br>$$<br>|G| = [K:K^G].<br>$$ </p>
+<p>Note that when apply to Galois extensions $K/F$, the theorem implies<br>$$<br>|H| = [K:K^H],<br>\quad\text{and}\quad<br>[G:H] = [K^H:F].<br>$$</p>
+<p>This post is long enough, so we may stop here.</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>For the missing notions and proofs in algebra, see any textbook such as</p>
+<ul>
+<li>Serge Lang, <em>Algebra</em>, 3rd ed., Addison-Wesley, 1993.</li>
+</ul>
+<p>As for the infinite case of Galois theory, especially the notion of profinite groups and supernatural numbers, see</p>
+<ul>
+<li>Michael D. Fried, Moshe Jarden, <em>Field Arithmetic</em>, Ergebnisse der Mathematik und ihrer Grenzgebiete 3, Folge 11 (3rd ed.), Springer-Verlag, 2008.</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Welcome!]]></title>
+      <url>http://gausyu.github.io/MathBlog/2016/01/01/hello/</url>
+      <content type="html"><![CDATA[<p>I’m a <em>graduated</em> student from Nankai University. My main interesting is in category theory, algebraic geometry and number theory. I’ve held a reading group for couple of years and written lots of math notes. This site is planed to put them and post some short essays. It is welcome for anyone to point out my mistakes.</p>
+<p><small><strong>Remarks:</strong> The name “Gau, Syu” is the old-fashion pinyin of my name 高煦. In standard pinyin, my family name should be written as “Gao” and given name as “Xu”.</small></p>
+]]></content>
+    </entry>
+    
+  
+  
+</search>
